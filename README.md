@@ -65,4 +65,18 @@
 9. Home stretch! Now you just have to make a user for pufferpanel.
     - pufferpanel user add
         - Put in your email and password and stuff. Make sure to press "y" when it asks you if you want the user to be an admin.
-10. If I didn't miss anything, you should be done now! Have fun.
+10. Installing the server to the pufferpanel
+    - If you setup that static IP properly earlier, you should remember what the IP address of the machine is. Go to that ip followed by :8080. Sign in using the pufferpanel user you created earlier.
+    - Click the light bulb in the top right to stop the site from searing your eyes
+    - Go to the templates tab. Add the templates for FTB Launcher, Fabric, MinecraftForge 1.17+, MinecraftForge 1.16 or older, Paper, Spigot, and Vanilla.
+    - Go to the servers tab.
+    - Click on the plus button
+    - The following steps are for FTB University 1.16
+    - Select FTB Launcher - Minecraft
+    - Do whatever server name, keep node as localnode, and environment as standard.
+    - Just press next on users
+    - Turn on the EULA Agreement toggle
+    - Set the memory to 16384 (that's 16GB)
+    - Set the modpack ID to 90
+    - Set the Modpack Version ID to 2087
+11. If I didn't miss anything, you should be done now! Have fun.

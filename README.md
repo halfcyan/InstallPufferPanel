@@ -1,4 +1,7 @@
 # Installing PufferPanel (And DuckDNS. And Docker. And Portainer.)
+
+To anyone who randomly stubles upon this, I made this for a friend to install a minecraft server and setup an ubuntu server with everything needed for that minecraft server (Dynamic DNS, etc.) If there are any issues, feel free to submit them. I'm not opposed to changing this.
+
 1. Install Ubuntu Server from https://ubuntu.com/download/server
     - Select option 2
     - Burn it to a USB drive using Rufus (https://rufus.ie/)
@@ -53,7 +56,7 @@
         --restart=always \
         -v /var/run/docker.sock:/var/run/docker.sock \
         -v portainer_data:/data \
-        cr.portainer.io/portainer/portainer-ce:2.9.3
+        cr.portainer.io/portainer/portainer-ce:latest
     - You now have Portianer installed. Go to the server's ip address followed by :9443 and you can access it. Make a user and login
     - Select local docker install if the option pops up
     - Click on the "My account" button on the top right and change your theme to dark. This is essential.

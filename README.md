@@ -49,12 +49,14 @@
     - This is gonna be a few commands again:
     docker volume create portainer_data
     - Second command (copy the whole thing)
-    docker run -d -p 8000:8000 -p 943:9443 --name portainer \
+    docker run -d -p 8000:8000 -p 9443:9443 --name portainer \
         --restart=always \
         -v /var/run/docker.sock:/var/run/docker.sock \
-        -v portainer_data:/data
+        -v portainer_data:/data \
         cr.portainer.io/portainer/portainer-ce:2.9.3
     - You now have Portianer installed. Go to the server's ip address followed by :9443 and you can access it. Make a user and login
+    - Select local docker install if the option pops up
+    - Click on the "My account" button on the top right and change your theme to dark. This is essential.
 7. DuckDNS Setup
     - I don't feel like explaining this one so I'm gonna just link a video: https://www.youtube.com/watch?v=bVmUV1G5wpI
 8. You're at the home stretch! Now you just have to modify your router settings. That will be fun, right?

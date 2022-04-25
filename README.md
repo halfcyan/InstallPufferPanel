@@ -49,13 +49,13 @@ To anyone who randomly stubles upon this, I made this for a friend to install a 
     sudo usermod -aG docker $USER
     - At this point, you have installed Docker. Run "logout" and run the SSH command again to get back into the server. 
 6. Now to install Portainer!
-    - This is gonna be a few commands again:
+    - This is gonna be a few commands again: \
     docker volume create portainer_data
-    - Second command (copy the whole thing)
-    docker run -d -p 8000:8000 -p 9443:9443 --name portainer \
-        --restart=always \
-        -v /var/run/docker.sock:/var/run/docker.sock \
-        -v portainer_data:/data \
+    - Second command (copy the whole thing) \
+    docker run -d -p 8000:8000 -p 9443:9443 --name portainer \\
+        --restart=always \\
+        -v /var/run/docker.sock:/var/run/docker.sock \\
+        -v portainer_data:/data \\
         cr.portainer.io/portainer/portainer-ce:latest
     - You now have Portianer installed. Go to the server's ip address followed by :9443 and you can access it. Make a user and login
     - Select local docker install if the option pops up

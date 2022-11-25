@@ -1,5 +1,7 @@
 # Installing PufferPanel (And DuckDNS. And Docker. And Portainer.) - 2 methods
 
+Report issues if you find any!
+
 ## Table of Contents
 
 1. [Prerequisites](#installing-prerequisites)
@@ -96,12 +98,16 @@ Use this method if you want to tweak anything within the installation
 4. Now to install Portainer!
     - This is gonna be a few commands again: \
     docker volume create portainer_data
-    - Second command (copy the whole thing) \
-    docker run -d -p 8000:8000 -p 9443:9443 --name portainer \ \
-        --restart=always \ \
-        -v /var/run/docker.sock:/var/run/docker.sock \ \
-        -v portainer_data:/data \ \
-        cr.portainer.io/portainer/portainer-ce:latest
+    - Second command (copy the whole thing)
+
+        ```text
+        docker run -d -p 8000:8000 -p 9443:9443 --name portainer \ \
+            --restart=always \ \
+            -v /var/run/docker.sock:/var/run/docker.sock \ \
+            -v portainer_data:/data \ \
+            cr.portainer.io/portainer/portainer-ce:latest
+        ```
+
     - You now have Portianer installed. Go to the server's ip address followed by :9443 and you can access it. Make a user and login
     - Select local docker install if the option pops up
     - Click on the "My account" button on the top right and change your theme to dark. This is essential.
@@ -125,12 +131,12 @@ Use this method if you want to tweak anything within the installation
     - Go to the templates tab. Add the templates for FTB Launcher, Fabric, MinecraftForge 1.17+, MinecraftForge 1.16 or older, Paper, Spigot, and Vanilla.
     - Go to the servers tab.
     - Click on the plus button
-    - The following steps are for FTB University 1.16
-    - Select FTB Launcher - Minecraft
-    - Do whatever server name, keep node as localnode, and environment as standard.
-    - Just press next on users
-    - Turn on the EULA Agreement toggle
-    - Set the memory to 16384 (that's 16GB)
-    - Set the modpack ID to 90
-    - Set the Modpack Version ID to 2087
+    - The following steps are for FTB University 1.16 as an example:
+        - Select FTB Launcher - Minecraft
+        - Do whatever server name, keep node as localnode, and environment as standard.
+        - Press next on users
+        - Turn on the EULA Agreement toggle
+        - Set the memory to 16384 (that's 16GB)
+        - Set the modpack ID to 90
+        - Set the Modpack Version ID to 2087
 4. If I didn't miss anything, you should be done now! Have fun.

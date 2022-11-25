@@ -36,16 +36,19 @@ Report issues if you find any!
     - Make sure the installation is running correctly by running `ansible --version`. If it doesn't work, try logging out and back in, then try again.
 2. Install git
     - Run the command to install git for your OS (`sudo apt install git` on Ubuntu, `sudo dnf in git` on Fedora, `sudo pacman -S git` on Arch)
-3. Edit varaibles in `portainer.yml`
-    - We're using DuckDNS as a Dymanic DNS provider, so you'll have to add your DuckDNS token to the `portainer.yml` file. You can get your token from <https://www.duckdns.org/domains>. Make an account if you don't have one, then add any subdomain you want. Add the token and subdomain to the respective `token` and `subdomain` variables at the top of the file. Additionally, add your username under the `username` variable.
-4. Run the playbook
-    - Run the following commands:
+3. Clone the repository using git
+    - Run the following:
 
-        ```shell
-        git clone https://github.com/halfcyan/InstallPufferPanel
-        cd InstallPufferPanel
-        ansible-playbook portainer.yml -i ./hosts --ask-pass  --ask-become-pass
-        ```
+    ```text
+    git clone https://github.com/halfcyan/InstallPufferPanel
+    cd InstallPufferPanel
+    ```
+
+4. Edit varaibles in `portainer.yml`
+    - We're using DuckDNS as a Dymanic DNS provider, so you'll have to add your DuckDNS token to the `portainer.yml` file. You can get your token from <https://www.duckdns.org/domains>. Make an account if you don't have one, then add any subdomain you want. Add the token and subdomain to the respective `token` and `subdomain` variables at the top of the file. Additionally, add your username under the `username` variable.
+5. Run the playbook
+    - Run the following command:
+        `ansible-playbook portainer.yml -i ./hosts --ask-pass  --ask-become-pass`
 
     - Enter your password if necessary
     - Once it finishes, open up a web browser and go to your server's IP address followed by :9443. This will open the Portainer dashboard. Create a username and password, then click local environment. This is how you will manage your Docker containers.

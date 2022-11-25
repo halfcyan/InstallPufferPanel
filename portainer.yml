@@ -1,7 +1,5 @@
 ---
 - name: Install PufferPanel with Portainer
-  hosts: ubuntu
-  remote_user: admin
   become: true
 
   tasks:

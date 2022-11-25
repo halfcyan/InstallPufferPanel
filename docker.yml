@@ -3,7 +3,6 @@
   hosts: ubuntu
   remote_user: admin
   become: true
-
   vars:
     token: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
     subdomain: "pufferpanel"

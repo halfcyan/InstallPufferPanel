@@ -47,6 +47,7 @@ Report issues if you find any!
         ansible-playbook portainer.yml -i ./hosts --ask-pass  --ask-become-pass
         ```
 
+    - Enter your password if necessary
     - Once it finishes, open up a web browser and go to your server's IP address followed by :9443. This will open the Portainer dashboard. Create a username and password, then click local environment. This is how you will manage your Docker containers.
     - [Continue to the conclusion](#conclusion).
 

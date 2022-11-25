@@ -39,5 +39,19 @@
       ansible.builtin.service:
         name: pufferpanel
         state: started
+
+    - name: Open PufferPanel port
+      community.general.ufw:
+        state: enabled
+        rule: allow
+        port: "8080"
+        proto: tcp
     
+    - name: Open Minecraft port
+      community.general.ufw:
+        state: enabled
+        rule: allow
+        port: "25565"
+        proto: tcp, udp
+
     - import_tasks: docker.yml

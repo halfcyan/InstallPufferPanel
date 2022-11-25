@@ -34,16 +34,19 @@
     - Make sure the installation is running correctly by running `ansible --version`. If it doesn't work, try logging out and back in, then try again.
 2. Install git
     - Run the command to install git for your OS (`sudo apt install git` on Ubuntu, `sudo dnf in git` on Fedora, `sudo pacman -S git` on Arch)
-3. Run the playbook
+3. Edit varaibles in `portainer.yml`
+    - We're using DuckDNS as a Dymanic DNS provider, so you'll have to add your DuckDNS token to the `portainer.yml` file. You can get your token from <https://www.duckdns.org/domains>. Make an account if you don't have one, then add any subdomain you want. Add the token and subdomain to the respective `token` and `subdomain` variables at the top of the file. Additionally, add your username under the `username` variable.
+4. Run the playbook
     - Run the following commands:
 
         ```shell
         git clone https://github.com/halfcyan/InstallPufferPanel
         cd InstallPufferPanel
-        ansible-playbook playbook.yml
+        ansible-playbook portainer.yml -i ./hosts --ask-pass  --ask-become-pass
         ```
 
-    - Wait for it to finish, then [continue to the conclusion](#conclusion).
+    - Once it finishes, open up a web browser and go to your server's IP address followed by :9443. This will open the Portainer dashboard. Create a username and password, then click local environment. This is how you will manage your Docker containers.
+    - [Continue to the conclusion](#conclusion).
 
 ## Method 2: Manual
 
@@ -111,7 +114,7 @@ Use this method if you want to tweak anything within the installation
 1. You're at the home stretch! Now you just have to modify your router settings. That will be fun, right?
     - I have no idea what type of router you have so I'll just tell you the goal.
         - Give the server a static local IP address
-        - Forward ports 9443, 8080, and 22
+        - Forward port 8080 if you want to allow outside users to use the web panel
         - Forward port 25565 over both TCP and UDP
 2. Home stretch! Now you just have to make a user for pufferpanel.
     - pufferpanel user add

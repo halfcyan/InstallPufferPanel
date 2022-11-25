@@ -1,0 +1,43 @@
+---
+- name: Install PufferPanel with Portainer
+  hosts: ubuntu
+  remote_user: admin
+  become: true
+
+  tasks:
+    - name: Update apt cache
+      ansible.builtin.apt:
+        update_cache: true
+        cache_valid_time: 3600
+
+    - name: Upgrade all apt packages
+      ansible.builtin.apt:
+        upgrade: dist
+
+    - name: Install Java
+      ansible.builtin.package:
+        name: openjdk-default
+        state: present
+
+    - name: Download PufferPanel setup script
+      ansible.builtin.get_url:
+        url: https://packagecloud.io/install/repositories/pufferpanel/pufferpanel/script.deb.sh
+        dest: bash
+        mode: 0755
+
+    - name: Install pufferpanel
+      ansible.builtin.package:
+        name: pufferpanel
+        state: present
+
+    - name: Enable PufferPanel Service
+      ansible.builtin.service:
+        name: pufferpanel
+        enabled: true
+
+    - name: Start PufferPanel Service
+      ansible.builtin.service:
+        name: pufferpanel
+        state: started
+    
+    - import_tasks: docker.yml
